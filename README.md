@@ -1,4 +1,4 @@
-# Fender Studio Pro 8 - Russian Language Pack (Localization)
+# Fender Studio Pro 8.x - Russian Language Pack (Localization)
 
 Полная локализация (русификатор) для Fender Studio Pro 8. Репозиторий содержит обновленные и исправленные файлы перевода, адаптированные для актуальной версии DAW.
 
