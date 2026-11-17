@@ -10,7 +10,6 @@
     Arrow Tool: УКАЗАТЕЛЬ
     Audio: Аудио
     Audio Editor: Аудиоредактор
-    Automation: Автоматизация
     Basic: Базовые
     Bend: Бенд
     Bend Curve: Кривая бенда
@@ -160,6 +159,7 @@
     Toggle Mute: Приглушение
     Toggle Select: Выделение
     Track: Трек
+    Track Preset: Пресет трека
     Transform: Преобразовать
     Transformation: Преобразование
     Triangle: Треугольник
@@ -264,6 +264,7 @@ Accessibility:
     'Off': Выкл
     'On': Вкл
     Page %(1) of %(2): Страница %(1) из %(2)
+    Text input: Ввод текста
 AccountOptionsView:
     Delete Account: Удалить аккаунт
     Sign Out: Выйти
@@ -433,6 +434,18 @@ ActivationMode.Subscription:
     Learn more about $CLOUDNAME: Узнать больше о $CLOUDNAME
 ActivityFeedItems:
     No recent activity.: Действия не производились.
+AddAudioTrackOptionsView:
+    Ascending: По возрастанию
+    FX Chain: Цепь FX
+    Format: Формат
+    Input: Вход
+    Output: Выход
+AddInstrumentTrackOptionsView:
+    Ascending: По возрастанию
+    Existing Instrument: Существующий инструмент
+    Input: Вход
+    New Instrument: Новый инструмент
+    Output: Выход
 AddLauncherScene:
     '@cmd.title[Launcher|Add Scene]': '@cmd.title[Launcher|Add Scene]'
 AddPlayerDialog:
@@ -461,27 +474,14 @@ AddPlayerDialog.InstrumentOptions:
 AddTrackDialog:
     Add Tracks: Добавить треки
     Audio: Аудио
+    Instrument: Инструмент
+    Preset: Пресет
+AddTrackOptionsView:
     Auto-Color: Автовыбор цвета
-    Automation: Автоматизация
     Color: Цвет
     Count: Количество
-    Folder: Папка
-    Instrument: Инструмент
-    Load Track Preset...: Загрузить пресет трека...
     Name: Имя
-    Pack Folder: Запаковать папку
-AddTrackDialog.AudioOptions:
-    Ascending: По возрастанию
-    FX Chain: Цепь FX
-    Format: Формат
-    Input: Вход
-    Output: Выход
-AddTrackDialog.InstrumentOptions:
-    Ascending: По возрастанию
-    Existing Instrument: Существующий инструмент
-    Input: Вход
-    New Instrument: Новый инструмент
-    Output: Выход
+    Pack Folder: Упаковать в папку
 AdjustDynamicsDialog:
     Adjust Dynamics: Настроить динамику
     Adjust Notated Dynamic: Настроить нотную динамику
@@ -656,7 +656,10 @@ AttachmentSideSelector:
     Attachments Below: Вложения ниже
     Default Attachment Side: Сторона прикрепления по умолчанию
 Audio:
+    '%(1) samples': '%(1) сэмплов'
+    Mono: Моно
     Resampler: Ресемплер
+    Stereo: Стерео
     Tape: Лента
 Audio Conveter:
     Collapse All: Свернуть все
@@ -748,6 +751,7 @@ AudioChannel:
     Mute: Мьют
     Pan: Пан
     Volume: Громкость
+    Volume Trim: Трим громкости
 AudioChannel.Narrow.Content:
     '@property[parent.controller.transformedTooltip]': '@property[parent.controller.transformedTooltip]'
     Automation Mode: Режим автоматизации
@@ -1222,7 +1226,6 @@ AudioInserts:
     Inserts: Инсерты
 AudioListenBus:
     Enable Listen Bus: Шина прослушивания
-    Solo through Listen Bus: Соло ч/з шину прослушивания
 AudioMeter.Narrow:
     '0': '0'
     A device produced invalid data: Устройство выдало неверные данные
@@ -1355,6 +1358,7 @@ AudioSendSlot:
     Send Active: Отправить активный
     Send Destination: Назначенние посыла
     Send Level: Уровень посыла
+    Send Level Trim: Трим уровня посыла
     Send Mute: Отправить глушение
     Send Pan: Отправить панорамирование
     Send Prefader: Посыл префейда
@@ -1379,7 +1383,6 @@ AudioSendsCueMixEmbedded:
     Sends: Посылы
 AudioSetup:
     '%(1) of %(2)': '%(1) из %(2)'
-    '%(1) samples': '%(1) сэмплов'
     Audio Setup: Опции аудио
     Available: Доступно
     Double (64 Bit): Двойной (64bit)
@@ -1547,6 +1550,8 @@ Automation:
     Latch: Захват
     List: Список
     Lyrics: Тексты
+    Merge Trim: Объединить трим
+    Merge Trim Automation: Объединить автоматизацию трима
     Merge VCA Automation: Слияние VCA автоматизаций
     Mode: Режим
     Mouse-Over: Наведение мыши
@@ -1569,6 +1574,7 @@ Automation:
     Sound Variations: Звуковые вариации
     Toggle: Переключать
     Touch: Перемещать захватом
+    Trim: Трим
     Type: Тип
     Velocity: Велосити
     Write: Новая запись автоматизации
@@ -1581,6 +1587,7 @@ AutomationColorAndSelect:
     Select Parameter Color: Выбрать цвет параметра
 AutomationHandler:
     Apply Current Automation: Применить текущую автоматизацию
+    Create Automation: Создать автоматизацию
     Show Automation: Показать автоматизацию
 AutomationMainContent:
     Channel Number: Номер канала
@@ -1592,6 +1599,7 @@ AutomationModeBoxNarrow:
 AutomationOption:
     Automatically add envelopes for all touched parameters: Автодобавление автоматизации для регуляторов контроллера
     Automatically create automation tracks for channels: Автодобавление автоматизации для каналов
+    Automatically merge trim curves: Автоматически объединять кривые трима
     Automation follows events: Перемещать автоматизацию с событиями
     Default automation curves for new Audio Tracks: Кривые автоматизации по умолчанию для новых аудиотреков
     Disable events under automation curves: Отключить события под кривыми автоматизации
@@ -1836,6 +1844,7 @@ ChannelConnectionsFirstRow:
     Targets: Цели
 ChannelFaderMeters:
     Flipped: Перевернуто
+    Trim: Трим
     Volume: Громкость
 ChannelFilter:
     Console Scenes: Сцены микшера
@@ -2038,6 +2047,7 @@ ChannelOrganizerSetup:
     '@cmd.title[Channel Components|Show VCA Connections]': '@cmd.title[Channel Components|Show VCA Connections]'
     '@cmd.title[Console|Enable Listen Bus]': '@cmd.title[Console|Enable Listen Bus]'
     '@cmd.title[Console|Solo through Listen Bus]': '@cmd.title[Console|Solo through Listen Bus]'
+    '@cmd.title[Console|Toggle Dim Solo]': '@cmd.title[Console|Toggle Dim Solo]'
     Audio device controls: Управление устройством
     Auto-expand selected channel: Авторасширять выбранный канал
     Automatically Create Instrument Busses: Автоматически создавать шины инструментов
@@ -2048,6 +2058,7 @@ ChannelOrganizerSetup:
     Channel notes: Канал с нотами
     Colorize channel strips: Полностью раскрасить область канала
     Colorize plug-in header: Цвет строки заголовка плагина
+    Dim Solo: Соло с приглушением
     Enable Listen Bus: Прослушивание шины
     Group assignment: Групповое назначение
     Grouping: Группировка
@@ -2056,10 +2067,12 @@ ChannelOrganizerSetup:
     Keep FX channels to the right: Помещать каналы эффектов в правую часть микшера
     Keep VCA channels to the right: Помещать VCA каналы в правую часть микшера
     Keep bus channels to the right: Помещать шины в правую часть микшера
+    Level: Уровень
     Link expansion and visibility of folder tracks: Привязка расширения и видимость папки треков
     Link visibility of Track List and Console: Привязка видимости списка треков и микшера
     Preserve order of channels with folder track: Сохранять порядок шин для папки-трека
     Sends/Cue mix: Посылы/Мониторинг
+    Solo: Соло
     Solo through Listen Bus: Соло через щину прослушивания
     VCA connections: VCA соединения
     Visibility: Визуальные настройки
@@ -2085,18 +2098,20 @@ ChannelSelector:
 ChannelTabMetersTiny:
     Clip / Peak Levels: Клипп / Пик-уровни
 ChannelTransform:
-    Do you want to abort the Bus Channel transformation?: Прервать преобразование канала шины?
-    Errors occurred during the rendering of the Bus Channel.: Во время рендеринга канала шины возникли ошибки.
-    Freeze Channel to Rendered Audio: Заморозить канал в рендеренное аудио
+    Do you want to abort the Channel freeze?: Прервать заморозку канала?
+    Errors occurred during the rendering of the Channel.: Во время рендеринга канала возникли ошибки.
+    Freeze FX Channel: Заморозить канал FX
     Freeze to Rendered Audio: Заморозить в рендеренное аудио
-    Instrument '%(1)' cannot be transformed, because it is also routed to '%(2)'.: Инструмент '%(1)' нельзя преобразовать, так как он также направлен в '%(2)'.
-    The Bus Channel '%(1)' cannot be transformed: Канал шины '%(1)' нельзя преобразовать
-    The Bus Channel sources contain no audio.: Источники канала шины не содержат аудио.
-    The transformed Channel '%(1)' contains protected content.: Преобразованный канал '%(1)' содержит защищённое содержимое.
-    The transformed Channel '%(1)' has a Send outside the transformed Bus.: У преобразованного канала '%(1)' есть Send за пределами преобразованной шины.
-    The transformed Track '%(1)' is using Launcher Cell Playback.: Преобразованный трек '%(1)' использует воспроизведение ячеек Launcher.
-    The untransformed Channel '%(1)' has a Send to the transformed Bus.: У непреобразованного канала '%(1)' есть Send на преобразованную шину.
+    Instrument '%(1)' cannot be frozen, because it is also routed to '%(2)'.: Инструмент '%(1)' нельзя заморозить, так как он также направлен в '%(2)'.
+    The Channel '%(1)' cannot be frozen.: Канал '%(1)' нельзя заморозить.
+    The frozen Channel '%(1)' contains protected content.: Замороженный канал '%(1)' содержит защищённое содержимое.
+    The frozen Channel '%(1)' has a Send outside the frozen Bus.: У замороженного канала '%(1)' есть посыл за пределы замороженной шины.
+    The frozen Track '%(1)' is using Launcher Cell Playback.: Замороженный трек '%(1)' использует воспроизведение ячеек Launcher.
+    The unfrozen Channel '%(1)' has a Send to the frozen Bus.: У незамороженного канала '%(1)' есть посыл на замороженную шину.
+    There is no audio to render.: Нет аудио для рендеринга.
+    Unfreeze FX Channel: Разморозить канал FX
     Unfreeze to Bus Channel: Разморозить в канал шины
+    Volume Trim: Трим громкости
 Channels:
     Audio: Аудио
     Aux Channels: Вход-Каналы
@@ -2147,8 +2162,11 @@ ChordInspectorContent:
     No chord selected: Аккорд не выбран
 ChordInspectorPopup:
     Chord Selector: Подбор аккордов
-ChordPresetFileInfo.Details:
+ChordPresetFileInfo:
     'Chords: ': 'Аккорды: '
+ChordPresetFileInfo.Details:
+    Play: Воспроизвести
+    Stop: Стоп
 ChordSelectorBottomPanel:
     Chord Assistant: Ассистент аккордов
 ChordSelectorHeader:
@@ -2477,7 +2495,7 @@ Command:
     Add Tracks: Добавить треки
     Add VCA for Folder Track: Добавить VCA для трека папки
     Add Virtual Instrument Player: Добавить плеер виртуальных инструментов
-    Add to Project: Добавить в проект
+    Add to Mastering Project: Добавить в мастеринг-проект
     Add to Show: Добавить к простмотру
     Aftertouch: Послекасание
     Align Chord Symbols: Выровнять символы аккорда
@@ -2608,6 +2626,7 @@ Command:
     Digital Release: Цифровой релиз
     Dim: Умен
     Disable: Отключить
+    Disable Dim Solo: Выключить соло с приглушением
     Disable Setlist Item: Отключить элемент сет-листа
     Disable Track: Отключить трек
     Dissolve Group: Распустить группу
@@ -2644,6 +2663,7 @@ Command:
     Edit Time Signature: Изменить тактовый размер
     Editor: Редактор
     Enable: Включить
+    Enable Dim Solo: Включить соло с приглушением
     Enable Direct Monitoring: Включить прямой мониторинг
     Enable Listen Bus: Шина прослушивания
     Enable Play Start Marker: Маркер начала воспроизведения
@@ -2686,6 +2706,7 @@ Command:
     Focus Previous: Перейти к предыдущему
     Forward: Далее
     Forward Bar: Вперед по тактам
+    Freeze FX Channel: Заморозить канал FX
     Freeze to Audio Track: Заморозить в аудиотрек
     Freeze to Rendered Audio: Заморозить в рендеренное аудио
     Fullscreen: Полноэкранный
@@ -2791,6 +2812,7 @@ Command:
     Left Extend: Перейти влево
     Left Extend Add: Перейти влево с добавлением
     Left Skip: Пройти влево
+    Legal Information: Правовая информация
     Link/Unlink Audio Track Editing: Привязка/Отвязка редактирования аудиотрека
     Load Preset File: Загрузить пресет
     Load Track Preset: Загрузить пресет трека
@@ -2845,6 +2867,7 @@ Command:
     Next: Следующий
     Next Bank: Следующий банк
     Next Channel: Следующий канал
+    Next Dim Level: Следующий уровень приглушения
     Next Event: Следующее событие
     Next Event Extend: К следующему событию
     Next Fader Flip Target: Следующее переключение фейдера
@@ -3172,6 +3195,10 @@ Command:
     Session Information: Информация о сессии
     Set Bar Offset to Cursor: Смещение такта к курсору
     Set Current as Default Patch: Текущий как патч по умолчанию
+    Set Dim Level to -12dB: Уровень приглушения -12 дБ
+    Set Dim Level to -18dB: Уровень приглушения -18 дБ
+    Set Dim Level to -24dB: Уровень приглушения -24 дБ
+    Set Dim Level to -6dB: Уровень приглушения -6 дБ
     Set Every 2nd Step: Каждый 2-й шаг
     Set Every 4th Step: Каждый 4-й шаг
     Set Frames at Cursor: Рамки на курсоре
@@ -3399,6 +3426,7 @@ Command:
     Toggle Decrescendos: Диминуэндо
     Toggle Detached Console: Отсоединить / Присоединить микшер
     Toggle Detached Editor: Отсоединить / Присоединить редактор
+    Toggle Dim Solo: Переключить соло с приглушением
     Toggle Dots: Точки
     Toggle Edit Mode: Режим редактирования
     Toggle Editor: Переключить редактор
@@ -3476,11 +3504,13 @@ Command:
     Transform Range: Диапазон трансформации
     Transport: Транспорт
     Transpose Chords: Транспозиция аккордов
+    Trim: Трим
     Undo: Отмена
     Undo All: Отменить все
     Undo Last Loop: Отменить последний луп
     Undo Visibility Change: Отменить изменение видимости
     Undo Zoom: Отменить масштаб
+    Unfreeze FX Channel: Разморозить канал FX
     Unfreeze to Bus Channel: Разморозить в канал шины
     Unfreeze to Instrument Track: Разморозить в трек инструмента
     Unfreeze to Realtime Audio: Разморозить в аудио реального времени
@@ -3594,6 +3624,9 @@ CommandSelectorDialog:
     Select Command: Выбрать команду
 CommonPropertyCreated:
     'Created:': 'Создан:'
+CompactKnobDisabled:
+    $title: $title
+    $tooltip: $tooltip
 CompactPackageInfo:
     $description: $description
 Concatenator:
@@ -3857,6 +3890,7 @@ DeviceFolder:
     Remove All %(1): Удалить все %(1)
     Rename: Переименовать
     Rename Device: Переименовать устройство
+    Replace: Заменить
     Replace %(1): Заменить %(1)
     'Saving Device: %(1)': 'Сохранения устройства: %(1)'
     This device can not be removed right now!: Устройство не может быть удалено!
@@ -3873,6 +3907,7 @@ DeviceRack:
     Automation: Автоматизация
     Load %(1): Загрузить %(1)
     Remove %(1): Удалить %(1)
+    Replace %(1): Заменить %(1)
 DeviceSafety:
     'Create device: %(1)': 'Создать устройство: %(1)'
     'Initialize device: %(1)': 'Инициализация устройства: %(1)'
@@ -4380,6 +4415,7 @@ Edit:
     (Enter Part): (Вставить партию)
     (Leave Part): (Оставить партию)
     (Shared Copy): (Зависимая копия)
+    Add Marker: Добавить маркер
     Assign in Ascending Order: Назначить в порядке возрастания
     Auto Zoom Full: Полный автомасштаб
     Auto Zoom Horizontally: Автомасштаб по горизонтали
@@ -4678,6 +4714,8 @@ Engine:AutomationFunctions:
     Add Automation: Добавить автоматизацию
     Automation: Автоматизация
     Colorize Automation: Цвет автоматизации
+    Merge Trim Automation: Объединить автоматизацию трима
+    Merge Trim Value: Объединить значение трима
     Move Automation: Переместить автоматизацию
     Reconnect Automation: Переподключить автоматизацию
     Reduce Automation: Сократить автоматизацию
@@ -4913,6 +4951,8 @@ FaderFlip:
     Volume: Громкость
 Feed:
     Refresh: Обновить
+FenderApplicationMenu:
+    Application Menu: Меню приложения
 FenderAuthenticationView:
     Close: Закрыть
     Fender Connect: Fender Connect
@@ -4961,6 +5001,10 @@ FenderSignUpWithEmailView:
     Other sign up options: Другие способы регистрации
     Password: Пароль
     Password must be 8-24 characters and include at least one uppercase letter, lowercase letter, and number.: Пароль должен содержать 8-24 символа и включать хотя бы одну заглавную букву, строчную букву и цифру.
+FenderSocialLogins:
+    Sign In with Apple: Войти через Apple
+    Sign In with Facebook: Войти через Facebook
+    Sign In with Google: Войти через Google
 FenderSocialSignups:
     Continue with Apple: Продолжить с Apple
     Continue with Facebook: Продолжить с Facebook
@@ -5651,7 +5695,6 @@ InstrumentSets:
     Load Instrument Set "%(1)": Загрузить набор инструментов "%(1)"
     Loading Instrument Set: Загрузка набора инструментов
     Loading Instrument Set "%(1)": Загрузка набора инструментов "%(1)"
-    Move to Instrument Set: Переместить в набор инструментов
     New Instrument Set: Новый набор инструментов
     Remove: Удалить
     Rename: Переименовать
@@ -5968,6 +6011,8 @@ LinkToNextMeasureSelector:
 LocaleOption:
     Language: Язык
 Locales:
+    '%(1) Kilobytes per second': '%(1) КБ в секунду'
+    '%(1) Megabytes per second': '%(1) МБ в секунду'
     '%(1) days ago': '%(1) дней назад'
     '%(1) months ago': '%(1) месяц назад'
     '%(1) weeks ago': '%(1) недели назад'
@@ -6060,7 +6105,6 @@ LyricsDisplay:
     Options: Опции
     Rhythmic Grid: Ритмическая сетка
     Show Ruler: Показать линейку
-    Text Field for Input Methods: Текстовое поле для методов ввода
 LyricsDisplaySetup:
     Ahead (in quarters): Впереди (в четвертях)
     Alignment: Выравнивание
@@ -6286,8 +6330,9 @@ Media:
     Stereo (Sl Sr): Stereo (Sl Sr)
     Top Center: Верхний центр
 Media.Music:
-    Default: По умолчанию
     MIDI: MIDI
+    MIDI 2.0: MIDI 2.0
+    Percent: Процент
 MediaClipOperations:
     Moving to Trash Bin...: Удалить в корзину...
     Rename Events: Переименовать события
@@ -6308,6 +6353,7 @@ MediaPoolFunctions:
     No files are unused.: Нет потерянных файлов.
     There are no external files.: Нет внешних файлов.
 MediaPoolHeader:
+    Auto Select: Автовыбор
     Data Zoom: Масштаб данных
     Search @cmd.title[]: Поиск @cmd.title[]
     'Sort by: ': 'Сорт по: '
@@ -6686,7 +6732,7 @@ MidiMonitor:
     Clear: Сброс
     Controllers: Контроллеры
     Description: Описание
-    MIDI Filter: Фильтр MIDI данных
+    MIDI Messages: MIDI-сообщения
     MIDI Monitor: Монитор MIDI
     Message: Сообщение
     Note On/Off: Вкл/Выкл ноту
@@ -7537,6 +7583,7 @@ NapState:
     Open: Открыть
 NarrowVolumeSlider:
     Flipped: Перевернуто
+    Trim: Трим
     Volume: Громкость
 Navigator:
     Navigator: Навигатор
@@ -7962,6 +8009,7 @@ OptionalOutputExpandArrow:
     Expand: Раскрыть
 Options:
     Advanced: Дополнение
+    After Automation Pass: После прохода автоматизации
     Always: Всегда
     Ask: Спросить
     Audio: Аудио
@@ -7974,10 +8022,12 @@ Options:
     File Types: Типы файлов
     MIDI: MIDI
     Never: Никогда
+    'Off': Выкл
     Open Default Session/Project/Show: Открыть стандартный Сеанс/Проект/Шоу
     Open Last Session/Project/Show: Открыть последний Сеанс/Проект/Шоу
     Synchronization: Синхронизация
     Video: Видео
+    When Leaving Trim Mode: При выходе из режима трима
 OpusEncoderOption:
     Bitrate: Битрейт
     Sample Rate: Дискретизация
@@ -8007,6 +8057,7 @@ PackageActions:
     Activated: Активирован
     Claim %(1) Product Keys: Запрос %(1) Ключ продукта
     Claim Product Key: Запрос ключа продукта
+    Copy Product Key: Копировать ключ продукта
     Deactivate: Deactivate
     Deactivate %(1) items: Deactivate %(1) items
     Disable: Отключить
@@ -8517,6 +8568,8 @@ ProcessFXHeaderView:
     Browse Presets: Обзор пресетов
     Next Preset @cmd[]: Следующий пресет @cmd[]
     Previous Preset @cmd[]: Предыдущий пресет @cmd[]
+ProcessFXParameter:
+    Process Effect Tail: Обрабатывать хвост эффекта
 ProcessFXTitleBar:
     Close: Закрыть
 ProcessGraph:
@@ -9123,6 +9176,7 @@ ScoreEdit:
 ScoreEditor:
     Apply Staff Preset: Применить пресет нотного стана
     Arrow Tool: Стрелка
+    Collect Fonts: Собрать шрифты
     Continuous: Непрерывно
     Convert to Grand Staff: Конверт в нотоносец для пиано
     Convert to Single Staff: Конверт в нотоносец для пиано
@@ -9913,6 +9967,11 @@ Sidebar:
     Speaker: Динамик
     Tempo: Темп
     Track Presets: Пресеты трека
+SignalChainView:
+    Input: Вход
+    Insert effect: Вставить эффект
+    Output: Выход
+    Signal Chain: Цепь сигнала
 SignatureEditLayer:
     Denominator: Знаменатель
     Edit Key Signature: Изменить тональность
@@ -9962,6 +10021,13 @@ SnapshotRecallOptionsContent:
     Sends: Посылы
     Visibility: Визуальные настройки
     Volume: Громкость
+SoloModeComponent:
+    Dim: Приглушение
+    Dim Level: Уровень приглушения
+    Dim Solo: Соло с приглушением
+    Listen: Прослушивание
+    Solo through Listen Bus: Соло через шину прослушивания
+    Standard: Стандарт
 Song:
     Align Center: Выровнять по центру
     Align Left: Выровнять по левой стороне
@@ -10319,6 +10385,10 @@ SoundVariationEditorMain:
     Remove Selected: Удалить выбранное
     Undo: Отмена
 SoundVariationLaneHeader:
+    D: У
+    Direction based: По указаниям исполнения
+    N: Н
+    Note based: По нотам
     Setup Sound Variations: Настройка вариаций
 SoundVariationPlaybackHeader:
     Sound Variation Playback: Воспроизвести  вариации
@@ -10492,7 +10562,9 @@ StemOptionsDialog:
     Bass: Бас
     Consolidate - Selected Stems are bounced to new Track: Объединить — выбранные стемы рендерятся в новый трек
     Drums: Ударные
+    Guitar: Гитара
     Other: Прочее
+    Piano: Фортепиано
     Select Stems to extract: Выберите стемы для извлечения
     Separate Stems: Разделить на стемы
     Vocals: Вокал
@@ -10516,7 +10588,9 @@ StemRenderer:
 StemSeparation:
     Bass: Бас
     Drums: Ударные
+    Guitar: Гитара
     Other: Прочее
+    Piano: Фортепиано
     Stem Separation: Разделение на стемы
     Support for Stem Separation: Поддержка Stem Separation
     Vocals: Вокал
@@ -10576,7 +10650,7 @@ StudioApp:
     A Sound Set with the identifier "%(1)" already exists!: Уже имеется саундсэт с ID "%(1)"!
     A drum click can only be generated if Impact is used as instrument.: Метроном из ударных можно создать, только если в качестве инструмента используется Impact.
     A part or pattern can only be converted to a drum click if it is in drum mode.: Партию или паттерн можно преобразовать в метроном из ударных, только если он в режиме ударных.
-    Add to Project: Добавить в проект
+    Add to Mastering Project: Добавить в мастеринг-проект
     Add to Show: Добавить к простмотру
     All samples must be in one-shot mode.: Все сэмплы должны быть в режиме one-shot.
     Are you sure you want to modify the Sound Set identifier?: Изменить ID саундсэта?
@@ -11084,6 +11158,7 @@ TrackEdit:
     Add Bus for Selected Channels: Добавить шину для выделенных каналов
     Add Folder Track: Добавить трек папки
     Add Instrument Track: Добавить инструментальный трек
+    Add Marker Track: Добавить трек маркеров
     Add Tracks: Добавить треки
     Add Tracks for all Inputs: Добавить треки для всех входов
     Add VCA for Selected Channels: Добавить VCA канал для выделенных каналов
@@ -11106,6 +11181,7 @@ TrackEdit:
     Insert Pattern: Вставить паттерн
     Invert Track Selection: Инверт выбранного трека
     Merge Events: Склеить события
+    Merge Trim Automation: Объединить автоматизацию трима
     Merge VCA Automation: Слияние VCA автоматизаций
     Mute Events: Мьют событий
     New Name: Новое имя
@@ -11221,6 +11297,7 @@ TrackListEmbeddedInspector:
     Folder Tracks: Папка треков
     Instrument Tracks: Треки инструмента
     Layers: Слои
+    Marker Tracks: Треки маркеров
     Track Visibility: Видимость трека
 TrackListInspector:
     Track List: Трек-лист
@@ -11513,11 +11590,10 @@ UserLicenseDialog.SpliceActivation:
 UserLicenseExpired:
     $APPNAME Activation: Активация $APPNAME
     $APPNAME Feature Requests: Запросы функций $APPNAME
-    Learn more about $CLOUDNAME: Узнать больше о $CLOUDNAME
+    Buy: Купить
     Otherwise, we look forward to your feedback on how we can make $APPNAME better for you.: В противном случае мы будем рады вашим отзывам о том, как сделать $APPNAME лучше для вас.
-    Purchase a License: Купить лицензию
-    ? 'Your demo period has ended. We hope you enjoyed using $APPNAME and made some great music. If you would like to continue using $APPNAME you can:'
-    : 'Ваш демо-период завершён. Надеемся, вам понравилось работать в $APPNAME и вы создали отличную музыку. Если вы хотите продолжить использовать $APPNAME, вы можете:'
+    ? Your demo period has ended. We hope you enjoyed using $APPNAME and made some great music. To continue using $APPNAME, you can buy or subscribe by clicking below.
+    : Ваш демо-период завершён. Надеемся, вам понравилось работать в $APPNAME и вы создали отличную музыку. Чтобы продолжить использовать $APPNAME, купите программу или оформите подписку, нажав кнопку ниже.
 UserOption:
     Advanced: Дополнение
     Appearance: Интерфейс
@@ -11874,7 +11950,11 @@ WindowsAudioWarning:
     Windows Audio: Служба Аудио
 WindowsMidi:
     Failed to open %(1)!: Не удалось открыть %(1)!
+    MIDI SDK Runtime version mismatch: Несовместимая версия среды выполнения MIDI SDK
+    MIDI Service not available: Служба MIDI недоступна
     Support for MIDI gear on Windows: Служба MIDI в ОС Windows
+    Supports MIDI 2.0: Поддерживает MIDI 2.0
+    Windows MIDI SDK Runtime not installed: Среда выполнения Windows MIDI SDK не установлена
     Windows MIDI Support: Службы Windows MIDI
 WorkspacesFolderPreview:
     Workspaces: Рабочая среда
